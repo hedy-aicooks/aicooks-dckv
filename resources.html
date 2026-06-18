@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - HEDY Intelligent Equipment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .resources-hero {
+            padding: 160px 24px 80px;
+            text-align: center;
+            background: var(--bg-section);
+        }
+        .resources-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .resources-hero p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .resources-section {
+            padding: 80px 0;
+        }
+        .resources-section:nth-child(odd) {
+            background: var(--bg-dark);
+        }
+        .resources-section:nth-child(even) {
+            background: var(--bg-section);
+        }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: all 0.3s;
+        }
+        .resource-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        .resource-icon {
+            min-width: 48px;
+            height: 48px;
+            background: var(--primary-glow);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .resource-info h3 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+        .resource-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .resource-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .resource-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary);
+            color: var(--bg-dark);
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background: var(--primary-dark);
+        }
+        @media (max-width: 768px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            .resources-hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" width="40" height="40">
+                        <circle cx="20" cy="20" r="18" fill="none" stroke="#00d4ff" stroke-width="2"/>
+                        <path d="M10 25 L20 10 L30 25" fill="none" stroke="#00d4ff" stroke-width="2"/>
+                        <line x1="10" y1="25" x2="30" y2="25" stroke="#00d4ff" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">HEDY</span>
+                    <span class="logo-sub">INTELLIGENT EQUIPMENT</span>
+                </div>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#products" class="nav-link">Products</a></li>
+                <li><a href="index.html#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-cta">Contact Us</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resources Hero -->
+    <section class="resources-hero">
+        <div class="container">
+            <span class="section-tag">Downloads</span>
+            <h1>Technical Resources</h1>
+            <p>Download product datasheets, user manuals, wiring diagrams, and certification documents for HEDY smart fan controllers.</p>
+        </div>
+    </section>
+
+    <!-- Product Datasheets -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">PDF Downloads</span>
+                <h2 class="section-title">Product Datasheets</h2>
+            </div>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-info">
+                        <h3>C1 Series Standard (4-15kW)</h3>
+                        <p>Complete technical specifications, dimensions, wiring diagram, and performance curves.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📏 2.3 MB</span>
+                            <span>📅 v2.1</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-info">
+                        <h3>C1 Series Heavy Duty (18.5-37kW)</h3>
+                        <p>Technical specs, cooling requirements, and advanced V/F control parameters.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📏 2.8 MB</span>
+                            <span>📅 v1.8</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-info">
+                        <h3>IoT Smart Module Datasheet</h3>
+                        <p>Cloud platform integration, API documentation, and mobile app specifications.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📏 1.5 MB</span>
+                            <span>📅 v1.2</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-info">
+                        <h3>Full Product Catalog 2024</h3>
+                        <p>Complete product range, accessories, and OEM/ODM capabilities overview.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📏 5.2 MB</span>
+                            <span>📅 2024 Edition</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Manuals -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Guides</span>
+                <h2 class="section-title">User Manuals & Wiring Guides</h2>
+            </div>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📖</div>
+                    <div class="resource-info">
+                        <h3>Installation & User Manual</h3>
+                        <p>Step-by-step installation guide, control panel operation, and troubleshooting.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📏 3.1 MB</span>
+                            <span>📅 v3.0</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🔌</div>
+                    <div class="resource-info">
+                        <h3>Wiring Diagram Collection</h3>
+                        <p>Main circuit, control circuit, shunt trip interface, and VAD mic wiring.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📏 1.8 MB</span>
+                            <span>📅 v2.2</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">⚙️</div>
+                    <div class="resource-info">
+                        <h3>Parameter Setting Guide</h3>
+                        <p>VFD parameter tables, cooking load profiles, and energy-saving optimization.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📏 2.0 MB</span>
+                            <span>📅 v1.5</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📐</div>
+                    <div class="resource-info">
+                        <h3>Dimension Drawings (CAD)</h3>
+                        <p>Enclosure dimensions, cutout templates, and panel mounting drawings.</p>
+                        <div class="resource-meta">
+                            <span>📁 ZIP</span>
+                            <span>📏 8.5 MB</span>
+                            <span>📅 DWG Format</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Certifications</span>
+                <h2 class="section-title">Certificates & Compliance</h2>
+            </div>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">🏆</div>
+                    <div class="resource-info">
+                        <h3>CCC Certificate</h3>
+                        <p>China Compulsory Certificate for all C1 series models.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📅 2023-2026</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🏆</div>
+                    <div class="resource-info">
+                        <h3>CE Certificate</h3>
+                        <p>European Conformity certification for EU market compliance.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📅 2023-2028</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🏆</div>
+                    <div class="resource-info">
+                        <h3>ISO 9001:2015 Certificate</h3>
+                        <p>Quality Management System certification for manufacturing.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📅 2022-2025</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🏆</div>
+                    <div class="resource-info">
+                        <h3>RoHS Compliance Report</h3>
+                        <p>Restriction of Hazardous Substances test report for all products.</p>
+                        <div class="resource-meta">
+                            <span>📁 PDF</span>
+                            <span>📅 2024</span>
+                        </div>
+                        <button class="download-btn">Download →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 40 40" width="36" height="36">
+                                <circle cx="20" cy="20" r="18" fill="none" stroke="#00d4ff" stroke-width="2"/>
+                                <path d="M10 25 L20 10 L30 25" fill="none" stroke="#00d4ff" stroke-width="2"/>
+                                <line x1="10" y1="25" x2="30" y2="25" stroke="#00d4ff" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="logo-main">HEDY</span>
+                    </div>
+                    <p>Smart Fan Controllers for Commercial Kitchen Exhaust Systems. Energy saving solutions you can trust.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#solutions">Solutions</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">C1 Series (4-15kW)</a></li>
+                        <li><a href="#">C1 Series (18.5-37kW)</a></li>
+                        <li><a href="#">IoT Smart Module</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:sales@hedyi.com">sales@hedyi.com</a></li>
+                        <li><a href="#">WhatsApp: +86 135 5596 9510</a></li>
+                        <li><a href="#">Guangzhou, China</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Guangzhou HEDY Intelligent Equipment Co., Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
