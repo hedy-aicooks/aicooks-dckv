@@ -825,76 +825,42 @@
         </div>
     </section>
 
-<form class="contact-form" id="contactForm">
-    <input type="text" name="name" placeholder="Your Name *" required>
-    <input type="text" name="company" placeholder="Company Name *" required>
-    <input type="email" name="email" placeholder="Email Address *" required>
-    <select name="projectType" required>
-        <option value="">Project Type</option>
-        <option value="new">New Build</option>
-        <option value="retrofit">Retrofit Existing System</option>
-        <option value="distributor">Distributor Inquiry</option>
-        <option value="oem">OEM / ODM Cooperation</option>
-    </select>
-    <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)">
-    <input type="text" name="freshPower" placeholder="Fresh Air Fan Power (kW)" >
-    <label style="display:block; margin-bottom:6px; font-weight:600;">
-        Upload Kitchen Layout & HVAC Drawings (optional)
-    </label>
-    <input  
-        type="file" 
-        name="project_files[]"
-        multiple
-        accept=".pdf,.dwg,.dxf,.png,.jpg,.jpeg"
-        style="margin-bottom:16px;"/>
-    <textarea name="message" placeholder="Message / Special Requirements"></textarea>
-    <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
-    <p class="form-msg" id="formMsg"></p >
-</form>
-
-<!-- 表单提交JS脚本，放在contact-section最底部 -->
-<script>
-const form = document.getElementById('contactForm');
-const msgBox = document.getElementById('formMsg');
-// 替换为你绑定好的Worker域名
-const API_URL = "https://api.aicooks-dckv.com";
-
-form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    msgBox.textContent = "Sending your inquiry...";
-    msgBox.style.color = "#00b4d8";
-
-    // 收集表单文本数据
-    const formDataObj = Object.fromEntries(new FormData(form));
-    // 提取文件列表（简易版仅提示用户备注文件名，不传输文件）
-    const fileInput = form.querySelector('input[type="file"]');
-    const fileNames = Array.from(fileInput.files).map(f => f.name).join(", ") || "No files uploaded";
-    formDataObj.fileList = fileNames;
-
-    try {
-        const res = await fetch(API_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formDataObj)
-        });
-        const result = await res.json();
-        if (result.success) {
-            msgBox.textContent = "Quote request sent successfully! We'll reply within 24h.";
-            msgBox.style.color = "#2e7d32";
-            form.reset();
-        } else {
-            msgBox.textContent = result.msg;
-            msgBox.style.color = "#d32f2f";
-        }
-    } catch (err) {
-        msgBox.textContent = "Submission failed, please try again later.";
-        msgBox.style.color = "#d32f2f";
-        console.error(err);
-    }
-});
-</script>
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact Us</span>
+                <h2 class="section-title">Request a Quote or Datasheet</h2>
+                <p class="section-description">
+                    Get in touch with our engineering team for product specifications, energy audit, or OEM/ODM cooperation.
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" placeholder="Your Name *" required>
+                        <input type="text" placeholder="Company Name *" required>
+                        <input type="email" placeholder="Email Address *" required>
+                        <select required>
+                            <option value="">Project Type</option>
+                            <option value="new">New Build</option>
+                            <option value="retrofit">Retrofit Existing System</option>
+                            <option value="distributor">Distributor Inquiry</option>
+                            <option value="oem">OEM / ODM Cooperation</option>
+                        </select>
+                        <input type="text" placeholder="Exhaust Fan Power (kW)">
+                        <input type="text" placeholder="Fresh Air Fan Power (kW)" >
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">
+  Upload Kitchen Layout & HVAC Drawings (optional)</label>
+                        <input  type="file" name="project_files[]"
+  multiple
+  accept=".pdf,.dwg,.dxf,.png,.jpg,.jpeg"
+  style="margin-bottom:16px;"/>
+                        <textarea placeholder="Message / Special Requirements"></textarea>
+                        <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
+                        <p class="form-msg" id="formMsg"></p>
+                    </form>
+                </div>
                 <div class="contact-info">
                     <div class="contact-info-item">
                         <div class="contact-info-icon">
