@@ -849,6 +849,13 @@
                             <option value="oem">OEM / ODM Cooperation</option>
                         </select>
                         <input type="text" placeholder="Exhaust Fan Power (kW)">
+                        <input type="text" placeholder="Fresh Air Fan Power (kW)" >
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">
+  Upload Kitchen Layout & HVAC Drawings (optional)</label>
+                        <input  type="file" name="project_files[]"
+  multiple
+  accept=".pdf,.dwg,.dxf,.png,.jpg,.jpeg"
+  style="margin-bottom:16px;"/>
                         <textarea placeholder="Message / Special Requirements"></textarea>
                         <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
                         <p class="form-msg" id="formMsg"></p>
