@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://aicooks-dckv.com/</loc>
+    <lastmod>2024-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About DCKV -->
+  <url>
+    <loc>https://aicooks-dckv.com/#about</loc>
+    <lastmod>2024-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Core Components -->
+  <url>
+    <loc>https://aicooks-dckv.com/#components</loc>
+    <lastmod>2024-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- How It Works -->
+  <url>
+    <loc>https://aicooks-dckv.com/#how-it-works</loc>
+    <lastmod>2024-06-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Solutions -->
+  <url>
+    <loc>https://aicooks-dckv.com/#solutions</loc>
+    <lastmod>2024-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects / Case Studies -->
+  <url>
+    <loc>https://aicooks-dckv.com/#projects</loc>
+    <lastmod>2024-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://aicooks-dckv.com/#contact</loc>
+    <lastmod>2024-06-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
