@@ -116,15 +116,15 @@
         <span class="comp-no">01</span>
         <img src="images/aicooks cabinet.jpg" alt="DCKV Control Cabinet with VFD drives" class="comp-img">
         <h3>DCKV Control Cabinet</h3>
-        <p>Houses AI controller & VFD drives, processes sensor inputs from all connected hoods.</p>
-        <ul><li>All-round Protection</li><li>Alarm & Warning Display</li><li>Big LCD Touchscreen</li></ul>
+        <p>Houses AI controller & VFD drives, processes sensor inputs from all connected hoods and dampers.</p>
+        <ul><li>AI Brain</li><li>All IN One Screen</li><li>Compatible to BMS/Fire System</li></ul>
       </div>
       <div class="comp-card fade">
         <span class="comp-no">02</span>
         <img src="images/controller.jpg" alt="Truly Smart Controller" class="comp-img">
         <h3>Truly Smart Controller</h3>
         <p>Microprocessor with zone logic & manual override. Stepless VFD 2.2–55kW.</p>
-        <ul><li>SS304 Design</li><li>All-round Protections</li><li>Smart Variable-speed</li></ul>
+        <ul><li>SS304 Design</li><li>All-round Protections</li><li>Smart Variable-speed Control</li></ul>
       </div>
       <div class="comp-card fade">
         <span class="comp-no">03</span>
@@ -208,6 +208,28 @@
         <button class="btn btn-primary" type="submit">Send Inquiry</button>
         <p class="form-msg" id="formMsg"></p>
       </form>
+
+      <script>
+const form = document.getElementById("contactForm");
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  // 把下面网址换成你自己的workers地址
+  const res = await fetch("https://form-email-forward.1037083158.workers.dev", {
+    method: "POST",
+    body: formData
+  });
+  const ret = await res.json();
+  if(ret.success){
+    alert("Message sent successfully!");
+    form.reset();
+  }else{
+    alert("Failed to send, please try again later");
+  }
+})
+</script>
+      
       <div class="contact-info">
         <p>📧 <a href="mailto:jimmy@hedy.com.cn">jimmy@hedy.com.cn</a></p>
         <p>📱 +86 135 5596 9510</p>
