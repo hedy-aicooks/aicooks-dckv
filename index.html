@@ -196,60 +196,65 @@
   <div class="container">
     <span class="tag">Contact Us</span>
     <h2 class="section-title">Request a Quote or Datasheet</h2>
-    <p class="section-desc">Engineering team available for specs, energy audit & OEM/ODM cooperation. </p >
-    <div class="contact-wrap">
-      <form class="contact-form" id="contactForm">
-        <input type="text" name="name" placeholder="Your Name *" required>
-        <input type="text" name="company" placeholder="Company Name *" required>
-        <input type="email" name="email" placeholder="Email Address *" required>
-        <select name="projectType" required>
-          <option value="">Project Type</option>
-          <option>New Build</option>
-          <option>Retrofit</option>
-          <option>Distributor</option>
-          <option>OEM/ODM</option>
-        </select>
-        <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)">
-        <input type="text" name="freshPower" placeholder="Fresh Air Fan Power (kW)">
-        <textarea name="message" placeholder="Message / Special Requirements"></textarea>
-        <button class="btn btn-primary" type="submit">Send Inquiry</button>
-        <p class="form-msg" id="formMsg"></p >
-      </form>
+    <p class="section-desc">Engineering team available for specs, energy audit & OEM/ODM cooperation. For ongoing kitchen project,please send layout plan and hvac drawing to our project team directly at jimmy@hedy.com.cn</p >
 
-<script>
-const form = document.getElementById("contactForm");
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
+    <!-- 外层两栏容器 -->
+    <div class="contact-wrap" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+      <!-- 左侧表单 -->
+      <div>
+        <form class="contact-form" id="contactForm">
+          <input type="text" name="name" placeholder="Your Name *" required>
+          <input type="text" name="company" placeholder="Company Name *" required>
+          <input type="email" name="email" placeholder="Email Address *" required>
+          <select name="projectType" required>
+            <option value="">Project Type</option>
+            <option>New Build</option>
+            <option>Retrofit</option>
+            <option>Distributor</option>
+            <option>OEM/ODM</option>
+          </select>
+          <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)">
+          <input type="text" name="freshPower" placeholder="Fresh Air Fan Power (kW)">
+          <textarea name="message" placeholder="Message / Special Requirements"></textarea>
+          <button class="btn btn-primary" type="submit">Send Inquiry</button>
+          <p class="form-msg" id="formMsg"></p >
+        </form>
+      </div>
 
-  try{
-    const res = await fetch("https://form-email-forward.1037083158.workers.dev", {
-      method: "POST",
-      body: formData
-    });
-    const ret = await res.json();
-    if(ret.success){
-      alert("Message sent successfully!");
-      form.reset();
-    }else{
-      alert("Failed to send, please try again later");
-    }
-  }catch(err){
-    alert("Network error, please try again");
-  }
-})
-</script>
-    </div>
-  </div>
-</section>
-   
+      <!-- 右侧联系信息 -->
       <div class="contact-info">
-        <p>📧 <a href="mailto:jimmy@hedy.com.cn">jimmy@hedy.com.cn</a></p>
-        <p>📱 +86 135 5596 9510</p>
-        <p>🏢 Guangzhou, Guangdong, China</p>
-        <p>⏱ Response within 24 Hours</p>
+        <p>📧 <a href=" ">jimmy@hedy.com.cn</a ></p >
+        <p>📱 +86 135 5596 9510</p >
+        <p>🏢 Guangzhou, Guangdong, China</p >
+        <p>⏱ Response within 24 Hours</p >
       </div>
     </div>
+
+    <!-- JS放到两栏容器外面，不会破坏布局 -->
+    <script>
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        try{
+          const res = await fetch("https://form-email-forward.1037083158.workers.dev", {
+            method: "POST",
+            body: formData
+          });
+          const ret = await res.json();
+          if(ret.success){
+            alert("Message sent successfully!");
+            form.reset();
+          }else{
+            alert("Failed to send, please try again later");
+          }
+        }catch(err){
+          alert("Network error, please try again");
+        }
+      })
+    </script>
+
   </div>
 </section>
 
