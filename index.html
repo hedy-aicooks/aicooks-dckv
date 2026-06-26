@@ -238,10 +238,10 @@
         const formData = new FormData(form);
 
         try{
-          const res = await fetch("https://form-email-forward.1037083158.workers.dev", {
-            method: "POST",
-            body: formData
-          });
+          const res = await fetch("/api/sendmail", {
+  method: "POST",
+  body: formData
+});
           const ret = await res.json();
           if(ret.success){
             alert("Message sent successfully!");
