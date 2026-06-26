@@ -202,25 +202,46 @@
     <div class="contact-wrap" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
       <!-- 左侧表单 -->
       <div>
-        <form class="contact-form" id="contactForm">
-          <input type="text" name="name" placeholder="Your Name *" required>
-          <input type="text" name="company" placeholder="Company Name *" required>
-          <input type="email" name="email" placeholder="Email Address *" required>
-          <select name="projectType" required>
-            <option value="">Project Type</option>
-            <option>New Build</option>
-            <option>Retrofit</option>
-            <option>Distributor</option>
-            <option>OEM/ODM</option>
-          </select>
-          <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)">
-          <input type="text" name="freshPower" placeholder="Fresh Air Fan Power (kW)">
-          <textarea name="message" placeholder="Message / Special Requirements"></textarea>
-          <button class="btn btn-primary" type="submit">Send Inquiry</button>
-          <p class="form-msg" id="formMsg"></p >
-        </form>
-      </div>
+       <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="5befd1ff-9cb9-48b8-8c54-34ddc913381e">
+  <input type="hidden" name="subject" value="New Inquiry from AICOOKS Website">
+  <input type="hidden" name="botcheck" style="display: none;">
 
+  <input type="text" name="name" placeholder="Your Name *" required>
+  <input type="text" name="company" placeholder="Company Name *" required>
+  <input type="email" name="email" placeholder="Email Address *" required>
+  <select name="projectType" required>
+    <option value="">Project Type</option>
+    <option>New Build</option>
+    <option>Retrofit</option>
+    <option>Distributor</option>
+    <option>OEM/ODM</option>
+  </select>
+  <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)">
+  <input type="text" name="freshPower" placeholder="Fresh Air Power (kW)">
+  <textarea name="message" placeholder="Message / Special Requirements"></textarea>
+
+  <button class="btn btn-primary" type="submit">Send Inquiry</button>
+</form>
+
+<script>
+const form = document.getElementById("contactForm");
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const res = await fetch(form.action, {
+    method: form.method,
+    body: formData
+  });
+  const result = await res.json();
+  if (result.success) {
+    alert("Message sent successfully!");
+    form.reset();
+  } else {
+    alert("Failed to send, please try again later");
+  }
+});
+</script>
       <!-- 右侧联系信息 -->
       <div class="contact-info">
         <p>📧 <a href=" ">jimmy@hedy.com.cn</a ></p >
