@@ -149,17 +149,23 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
     background: transparent !important;
     padding: 5px 10px !important;
 }
-/* 清空插件自动生成的所有文字 */
-.goog-te-gadget-simple > span {
-    font-size: 0px !important;
+#google_translate_element{
+  width:32px;
+  height:32px;
 }
-/* 手动固定写死英文文字，不会跟随系统变化 */
-.goog-te-gadget-simple::before {
-    content: "Language ▾";
-    font-size: 15px;
-    color: #ffffff;
+.goog-te-gadget{
+  overflow:hidden;
 }
-/* 隐藏谷歌自带多余元素 */
-.goog-te-menu-value {
-    display: none !important;
+/* 隐藏全部自带文字 */
+.goog-te-gadget-simple{
+  border:0 !important;
+  background:transparent !important;
+}
+.goog-te-gadget-simple span{
+  display:none !important;
+}
+/* 自定义图标 */
+.goog-te-gadget-simple::after{
+  content:"🌐";
+  font-size:20px;
 }
