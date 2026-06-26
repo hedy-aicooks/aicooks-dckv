@@ -198,51 +198,57 @@
     <h2 class="section-title">Request a Quote or Datasheet</h2>
     <p class="section-desc">If contact form is not working,please send your inquiry with layout plan and hvac drawing to jimmy@hedy.com.cn. Engineering team available for specs, energy audit & OEM/ODM cooperation.</p >
 
-    <!-- 外层两栏容器 -->
+    <!-- 左右两栏布局：表单 + 联系信息，自动并排 -->
     <div class="contact-wrap" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
       <!-- 左侧表单 -->
       <div>
-       <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="5befd1ff-9cb9-48b8-8c54-34ddc913381e">
-  <input type="hidden" name="subject" value="New Inquiry from AICOOKS Website">
-  <input type="hidden" name="botcheck" style="display: none;">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="5befd1ff-9cb9-48b8-8c54-34ddc913381e">
+          <input type="hidden" name="subject" value="New Inquiry from AICOOKS Website">
+          <input type="hidden" name="botcheck" style="display: none;">
 
-  <input type="text" name="name" placeholder="Your Name *" required>
-  <input type="text" name="company" placeholder="Company Name *" required>
-  <input type="email" name="email" placeholder="Email Address *" required>
-  <select name="projectType" required>
-    <option value="">Project Type</option>
-    <option>New Build</option>
-    <option>Retrofit</option>
-    <option>Distributor</option>
-    <option>OEM/ODM</option>
-  </select>
-  <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)">
-  <input type="text" name="freshPower" placeholder="Fresh Air Power (kW)">
-  <textarea name="message" placeholder="Message / Special Requirements"></textarea>
+          <!-- 统一美化输入框，和你网站原有风格一致 -->
+          <input type="text" name="name" placeholder="Your Name *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+          <input type="text" name="company" placeholder="Company Name *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+          <input type="email" name="email" placeholder="Email Address *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+          
+          <select name="projectType" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+            <option value="">Project Type</option>
+            <option>New Build</option>
+            <option>Retrofit</option>
+            <option>Distributor</option>
+            <option>OEM/ODM</option>
+          </select>
 
-  <button class="btn btn-primary" type="submit">Send Inquiry</button>
-</form>
+          <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+          <input type="text" name="freshPower" placeholder="Fresh Air Power (kW)" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+          
+          <textarea name="message" placeholder="Message / Special Requirements" rows="4" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;"></textarea>
 
-<script>
-const form = document.getElementById("contactForm");
-form.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const res = await fetch(form.action, {
-    method: form.method,
-    body: formData
-  });
-  const result = await res.json();
-  if (result.success) {
-    alert("Message sent successfully!");
-    form.reset();
-  } else {
-    alert("Failed to send, please try again later");
-  }
-});
-</script>
-      <!-- 右侧联系信息 -->
+          <button class="btn btn-primary" type="submit" style="width:100%; padding:13px; margin-top:10px;">Send Inquiry</button>
+        </form>
+
+        <script>
+          const form = document.getElementById("contactForm");
+          form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const res = await fetch(form.action, {
+              method: form.method,
+              body: formData
+            });
+            const result = await res.json();
+            if (result.success) {
+              alert("Message sent successfully!");
+              form.reset();
+            } else {
+              alert("Failed to send, please try again later");
+            }
+          });
+        </script>
+      </div>
+
+      <!-- 右侧联系信息（和表单并排，不会换行） -->
       <div class="contact-info">
         <p>📧 <a href=" ">jimmy@hedy.com.cn</a ></p >
         <p>📱 +86 135 5596 9510</p >
@@ -250,7 +256,9 @@ form.addEventListener("submit", async function (e) {
         <p>⏱ Response within 24 Hours</p >
       </div>
     </div>
-
+  </div>
+</section>
+  
     <!-- JS放到两栏容器外面，不会破坏布局 -->
     <script>
       const form = document.getElementById("contactForm");
