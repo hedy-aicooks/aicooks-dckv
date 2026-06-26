@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,15 +117,15 @@
         <span class="comp-no">01</span>
         <img src="images/aicooks cabinet.jpg" alt="DCKV Control Cabinet with VFD drives" class="comp-img">
         <h3>DCKV Control Cabinet</h3>
-        <p>Houses AI controller & VFD drives, processes sensor inputs from all connected hoods and dampers.</p>
-        <ul><li>AI Brain</li><li>All IN One Screen</li><li>Compatible to BMS/Fire System</li></ul>
+        <p>Houses AI controller & VFD drives, processes sensor inputs from all connected hoods.</p>
+        <ul><li>All-round Protection</li><li>Alarm & Warning Display</li><li>Big LCD Touchscreen</li></ul>
       </div>
       <div class="comp-card fade">
         <span class="comp-no">02</span>
         <img src="images/controller.jpg" alt="Truly Smart Controller" class="comp-img">
         <h3>Truly Smart Controller</h3>
         <p>Microprocessor with zone logic & manual override. Stepless VFD 2.2–55kW.</p>
-        <ul><li>SS304 Design</li><li>All-round Protections</li><li>Smart Variable-speed Control</li></ul>
+        <ul><li>SS304 Design</li><li>All-round Protections</li><li>Smart Variable-speed</li></ul>
       </div>
       <div class="comp-card fade">
         <span class="comp-no">03</span>
@@ -195,57 +196,23 @@
   <div class="container">
     <span class="tag">Contact Us</span>
     <h2 class="section-title">Request a Quote or Datasheet</h2>
-    <p class="section-desc">Engineering team available for specs, energy audit & OEM/ODM cooperation. </p >
+    <p class="section-desc">Engineering team available for specs, energy audit & OEM/ODM cooperation.</p>
     <div class="contact-wrap">
       <form class="contact-form" id="contactForm">
-        <input type="text" name="name" placeholder="Your Name *" required>
-        <input type="text" name="company" placeholder="Company Name *" required>
-        <input type="email" name="email" placeholder="Email Address *" required>
-        <select name="projectType" required>
-          <option value="">Project Type</option>
-          <option>New Build</option>
-          <option>Retrofit</option>
-          <option>Distributor</option>
-          <option>OEM/ODM</option>
-        </select>
-        <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)">
-        <input type="text" name="freshPower" placeholder="Fresh Air Fan Power (kW)">
-        <textarea name="message" placeholder="Message / Special Requirements"></textarea>
+        <input type="text" placeholder="Your Name *" required>
+        <input type="text" placeholder="Company Name *" required>
+        <input type="email" placeholder="Email Address *" required>
+        <select required><option value="">Project Type</option><option>New Build</option><option>Retrofit</option><option>Distributor</option><option>OEM/ODM</option></select>
+        <input type="text" placeholder="Exhaust Fan Power (kW)">
+        <input type="text" placeholder="Fresh Air Fan Power (kW)">
+        <textarea placeholder="Message / Special Requirements"></textarea>
         <button class="btn btn-primary" type="submit">Send Inquiry</button>
-        <p class="form-msg" id="formMsg"></p >
+        <p class="form-msg" id="formMsg"></p>
       </form>
-
-<script>
-const form = document.getElementById("contactForm");
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-
-  try{
-    const res = await fetch("https://form-email-forward.1037083158.workers.dev", {
-      method: "POST",
-      body: formData
-    });
-    const ret = await res.json();
-    if(ret.success){
-      alert("Message sent successfully!");
-      form.reset();
-    }else{
-      alert("Failed to send, please try again later");
-    }
-  }catch(err){
-    alert("Network error, please try again");
-  }
-})
-</script>
-    </div>
-  </div>
-</section>
-      
       <div class="contact-info">
         <p>📧 <a href="mailto:jimmy@hedy.com.cn">jimmy@hedy.com.cn</a></p>
         <p>📱 +86 135 5596 9510</p>
-        <p>🏢 No.63 Punan Road,Huangpu Ditrict,Guangzhou,China</p>
+        <p>🏢 Guangzhou, Guangdong, China</p>
         <p>⏱ Response within 24 Hours</p>
       </div>
     </div>
