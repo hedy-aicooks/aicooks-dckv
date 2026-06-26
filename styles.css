@@ -157,12 +157,3 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   visibility: hidden;
   position: relative;
 }
-/* 自定义图标放在上层 */
-.goog-te-gadget::after {
-  visibility: visible;
-  content: "🌐";
-  font-size: 20px;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
