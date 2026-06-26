@@ -144,16 +144,20 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-
 #google_translate_element {
   display:inline-block;
   margin-left:15px;
   vertical-align: middle;
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
 }
-.goog-te-gadget {
-  visibility: hidden;
-  position: relative;
+.goog-te-gadget-simple {
+    border: none !important;
+    background: transparent !important;
+    position: relative;
+    width:28px;
+    height:28px;
+    overflow:hidden;
+}
+/* 彻底隐藏谷歌所有原生内容 */
+.goog-te-gadget-simple > span {
+    display: none !important;
 }
