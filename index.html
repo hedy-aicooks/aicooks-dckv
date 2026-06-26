@@ -207,12 +207,12 @@
           <input type="hidden" name="subject" value="New Inquiry from AICOOKS Website">
           <input type="hidden" name="botcheck" style="display: none;">
 
-          <!-- 统一美化输入框，和你网站原有风格一致 -->
-          <input type="text" name="name" placeholder="Your Name *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
-          <input type="text" name="company" placeholder="Company Name *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
-          <input type="email" name="email" placeholder="Email Address *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+          <!-- 统一字体、尺寸，全部输入框样式完全统一 -->
+          <input type="text" name="name" placeholder="Your Name *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:16px;">
+          <input type="text" name="company" placeholder="Company Name *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:16px;">
+          <input type="email" name="email" placeholder="Email Address *" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:16px;">
           
-          <select name="projectType" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+          <select name="projectType" required style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:16px;">
             <option value="">Project Type</option>
             <option>New Build</option>
             <option>Retrofit</option>
@@ -220,10 +220,11 @@
             <option>OEM/ODM</option>
           </select>
 
-          <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
-          <input type="text" name="freshPower" placeholder="Fresh Air Power (kW)" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+          <input type="text" name="exhaustPower" placeholder="Exhaust Fan Power (kW)" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:16px;">
+          <input type="text" name="freshPower" placeholder="Fresh Air Power (kW)" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:16px;">
           
-          <textarea name="message" placeholder="Message / Special Requirements" rows="4" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;"></textarea>
+          <!-- 文本域继承全局字体，和其他输入框完全一致 -->
+          <textarea name="message" placeholder="Message / Special Requirements" rows="4" style="width:100%; padding:12px 15px; margin:8px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:16px;"></textarea>
 
           <button class="btn btn-primary" type="submit" style="width:100%; padding:13px; margin-top:10px;">Send Inquiry</button>
         </form>
@@ -248,7 +249,7 @@
         </script>
       </div>
 
-      <!-- 右侧联系信息（和表单并排，不会换行） -->
+      <!-- 右侧联系信息（和表单并排） -->
       <div class="contact-info">
         <p>📧 <a href=" ">jimmy@hedy.com.cn</a ></p >
         <p>📱 +86 135 5596 9510</p >
@@ -256,34 +257,6 @@
         <p>⏱ Response within 24 Hours</p >
       </div>
     </div>
-  </div>
-</section>
-  
-    <!-- JS放到两栏容器外面，不会破坏布局 -->
-    <script>
-      const form = document.getElementById("contactForm");
-      form.addEventListener("submit", async function(e) {
-        e.preventDefault();
-        const formData = new FormData(form);
-
-        try{
-          const res = await fetch("/api/sendmail", {
-  method: "POST",
-  body: formData
-});
-          const ret = await res.json();
-          if(ret.success){
-            alert("Message sent successfully!");
-            form.reset();
-          }else{
-            alert("Failed to send, please try again later");
-          }
-        }catch(err){
-          alert("Network error, please try again");
-        }
-      })
-    </script>
-
   </div>
 </section>
 
