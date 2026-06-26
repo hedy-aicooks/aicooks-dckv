@@ -144,25 +144,24 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 谷歌翻译语言按钮美化 */
+/* 翻译按钮精简美化 */
 .goog-te-gadget-simple {
-    padding:6px 12px !important;
+    padding:4px 8px !important;
     font-size:14px !important;
-    border: 1px solid #ddd !important;
-    border-radius: 6px !important;
-    background-color: #ffffff !important;
+    border: none !important;
+    background:transparent !important;
 }
+/* 隐藏所有文字，只保留下拉箭头 */
 .goog-te-gadget-simple span {
-    font-size:0 !important;
+    display: none !important;
 }
-.goog-te-gadget-simple span:first-child {
-    font-size:14px !important;
-}#google_translate_element {
-  display: inline-block;
-  margin-left: 12px;
+.goog-te-gadget-simple .goog-te-menu-value {
+    display:block !important;
 }
-@media (max-width:768px){
-  #google_translate_element {
-    display: none;
-  }
+/* 只显示小三角 */
+.goog-te-menu-value span:nth-child(1){
+    display:none !important;
+}
+.goog-te-menu-value span:nth-child(2){
+    display:none !important;
 }
