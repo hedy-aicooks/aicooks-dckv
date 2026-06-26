@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Block irrelevant or private files
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: *.inc$
+Disallow: *.log$
+
+# Sitemap
 Sitemap: https://aicooks-dckv.com/sitemap.xml
