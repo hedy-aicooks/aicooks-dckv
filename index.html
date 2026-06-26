@@ -30,8 +30,9 @@
       <li><a href="#how" class="nav-link">How It Works</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn-nav">Request Quote</a>
+   </ul>
+<div id="google_translate_element" style="display:inline-block; margin-left:15px;"></div>
+<a href=" " class="btn-nav">Request Quote</a >
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -305,5 +306,18 @@ window.addEventListener('scroll',()=>{
 const fObs=new IntersectionObserver(ents=>ents.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 </script>
+<!-- 在这里粘贴你的谷歌翻译两段脚本 -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'zh-CN,es,de,fr,ar',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
