@@ -305,22 +305,6 @@ window.addEventListener('scroll',()=>{
 /* Fade-in */
 const fObs=new IntersectionObserver(ents=>ents.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
-<script type="text/javascript">
-// 翻译初始化函数
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        // 网站原始语言：你的站点是英文页面
-        pageLanguage: 'en',
-        // 支持翻译的语种（外贸常用：中英阿法德西俄等，按需删减）
-        includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it',
-        // 关键布局：SIMPLE 完整下拉弹窗（修复只出图标无对话框bug）
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: true
-    }, 'google_translate_element');
-}
-</script>
-<!-- 谷歌翻译核心加载脚本 -->
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script>
+
 </body>
 </html>
