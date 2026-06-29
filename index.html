@@ -309,12 +309,17 @@ document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 <!-- 谷歌翻译放页面全部渲染完成之后 -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
+  try {
     new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it,id,th,vi,ms,tl,lo,km,my',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: true
+      pageLanguage: 'en',
+      includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it,id,th,vi,ms,tl,lo,km,my',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: true
     }, 'google_translate_element');
+  } catch (err) {
+    // 手机渲染慢初始化失败，500ms后自动重试
+    setTimeout(googleTranslateElementInit, 500);
+  }
 }
 </script>
 <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
