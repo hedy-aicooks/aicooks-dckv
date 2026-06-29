@@ -307,25 +307,6 @@ document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 </script>
   
 <!-- 谷歌翻译页面全部渲染完成之后 -->
-<!-- 新增：拦截翻译顶部横幅JS -->
-<script>
-// 实时监控并强制销毁谷歌顶部翻译横幅，阻止页面下移
-window.addEventListener('load', function() {
-  setInterval(function() {
-    // 隐藏顶部翻译iframe
-    const bannerIframe = document.querySelector('iframe.goog-te-banner-frame');
-    if (bannerIframe) {
-      bannerIframe.style.display = 'none';
-      bannerIframe.style.height = '0';
-      bannerIframe.style.visibility = 'hidden';
-    }
-    // 强制重置body顶部偏移，不让页面被顶下去遮挡header
-    document.body.style.top = '0px';
-    document.documentElement.style.scrollPaddingTop = '0';
-  }, 100);
-});
-</script>
-
 <!-- 你原本的翻译初始化脚本，不动 -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
