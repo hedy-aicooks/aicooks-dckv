@@ -144,56 +144,56 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 外层容器和Request Quote垂直居中对齐 */
+/* 外层容器与Request Quote按钮垂直居中 */
 #google_translate_element {
   display: inline-flex !important;
   align-items: center !important;
   vertical-align: middle !important;
-  line-height: 1 !important;
+  line-height: 1;
 }
 
-/* 清除全部白框、边框、阴影、边距 */
+/* 清除所有白色边框、背景、阴影 */
 .goog-te-gadget-simple {
   background: transparent !important;
-  border: none !important;
+  border: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
   box-shadow: none !important;
 }
 
+/* 内部横向布局，图标+三角同行居中，缝隙极小 */
 .goog-te-gadget-simple .goog-te-menu-value {
   display: inline-flex !important;
+  flex-direction: row !important;
   align-items: center !important;
+  gap: 2px !important;
   padding: 0 !important;
-  margin: 0 !important;
 }
 
-/* G图标正常居中 */
-.goog-te-gadget-simple .goog-te-menu-value img {
+/* Google图标垂直对齐，消除上浮 */
+.goog-te-gadget-simple img {
   margin: 0 !important;
   vertical-align: middle !important;
 }
 
-/* 最高权重强制隐藏下拉三角 */
-.goog-te-gadget-simple > .goog-te-menu-value > span:nth-child(2) {
-  display: none !important;
-  visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
+/* 下拉三角微调垂直位置，和图标中线对齐 */
+.goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
+  position: static !important;
+  transform: translateY(1px) !important;
+  margin: 0 !important;
 }
 
-/* 隐藏“选择语言”文字 */
-.goog-te-gadget-simple .goog-te-menu-value > span:nth-child(3) {
+/* 隐藏多余“选择语言”文字 */
+.goog-te-gadget-simple span:nth-child(3) {
   display: none !important;
 }
 
-/* 清除所有内层span白底 */
+/* 清除所有内层残留白底 */
 .goog-te-gadget-simple span {
   background: transparent !important;
 }
 
-/* 下拉弹窗层级置顶 */
+/* 下拉弹窗层级置顶，不遮挡页面 */
 .goog-te-menu-frame {
   z-index: 99999 !important;
 }
