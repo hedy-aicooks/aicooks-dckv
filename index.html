@@ -274,20 +274,19 @@
     </div>
   </div>
 </footer>
-
-<script>
+<script type="text/javascript">
 /* Counter Animation */
 const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      document.querySelectorAll('.stat-num[data-target]').forEach(el=>{
-        const t=+el.dataset.target,n=Math.ceil(t/60);
-        let c=0;
-        const i=setInterval(()=>{c+=n;if(c>=t){el.textContent=t.toLocaleString();clearInterval(i)}else el.textContent=c},22);
-      });
-      obs.unobserve(e.target)
-    }
-  })
+entries.forEach(e=>{
+  if(e.isIntersecting){
+    document.querySelectorAll('.stat-num[data-target]').forEach(el=>{
+      const t=+el.dataset.target,n=Math.ceil(t/60);
+      let c=0;
+      const i=setInterval(()=>{c+=n;if(c>t){el.textContent=t.toLocaleString();clearInterval(i)}else el.textContent=c;},22);
+    });
+    obs.unobserve(e.target)
+  }
+})
 },{threshold:.4});
 obs.observe(document.querySelector('.hero'));
 
@@ -295,32 +294,16 @@ obs.observe(document.querySelector('.hero'));
 document.getElementById('hamburger').onclick=()=>document.getElementById('navLinks').classList.toggle('open');
 
 /* Active nav on scroll */
-const secs=document.querySelectorAll('section[id],nav');
+const secs=document.querySelectorAll('section[id].nav');
 window.addEventListener('scroll',()=>{
   let cur='';
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});
-  document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+  document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')=='#'+cur));
 });
-</script>
-/* Fade-in */
-<script type="text/javascript">
+
+/* Fade-in 图片淡入逻辑 */
 const fObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 </script>
-
-<!-- 谷歌翻译脚本必须放在 </body> 之前、</html> 内部 -->
-<!-- 谷歌翻译页面全部渲染完成之后 -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: true
-    }, 'google_translate_element');
-}
-</script>
-<script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
 </html>
