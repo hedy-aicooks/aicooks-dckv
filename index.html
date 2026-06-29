@@ -301,11 +301,27 @@ window.addEventListener('scroll',()=>{
   secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});
   document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
 });
-
+</script>
 /* Fade-in */
 <script type="text/javascript">
 const fObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 </script>
+
+<!-- 谷歌翻译脚本必须放在 </body> 之前、</html> 内部 -->
+<!-- 谷歌翻译页面全部渲染完成之后 -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: true
+    }, 'google_translate_element');
+}
+</script>
+<script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
+
