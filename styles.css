@@ -144,7 +144,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 外层容器和Request Quote按钮垂直居中对齐 */
+/* 外层容器和Request Quote垂直居中对齐 */
 #google_translate_element {
   display: inline-flex !important;
   align-items: center !important;
@@ -152,15 +152,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   line-height: 1 !important;
 }
 
-/* 外层容器和Request Quote按钮垂直居中对齐 */
-#google_translate_element {
-  display: inline-flex !important;
-  align-items: center !important;
-  vertical-align: middle !important;
-  line-height: 1 !important;
-}
-
-/* 彻底清除白底、边框、阴影、所有内外边距，完全透明 */
+/* 清除全部白框、边框、阴影、边距 */
 .goog-te-gadget-simple {
   background: transparent !important;
   border: none !important;
@@ -169,7 +161,6 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   box-shadow: none !important;
 }
 
-/* 内部容器取消多余间距 */
 .goog-te-gadget-simple .goog-te-menu-value {
   display: inline-flex !important;
   align-items: center !important;
@@ -177,28 +168,32 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   margin: 0 !important;
 }
 
-/* 谷歌G图标正常显示，垂直居中 */
-.goog-te-gadget-simple img {
+/* G图标正常居中 */
+.goog-te-gadget-simple .goog-te-menu-value img {
   margin: 0 !important;
   vertical-align: middle !important;
 }
 
-/* 核心：完全隐藏下拉三角符号 */
-.goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
+/* 最高权重强制隐藏下拉三角 */
+.goog-te-gadget-simple > .goog-te-menu-value > span:nth-child(2) {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 隐藏“选择语言”文字 */
+.goog-te-gadget-simple .goog-te-menu-value > span:nth-child(3) {
   display: none !important;
 }
 
-/* 隐藏多余“选择语言”文字 */
-.goog-te-gadget-simple span:nth-child(3) {
-  display: none !important;
-}
-
-/* 清除所有内层残留白色底色 */
+/* 清除所有内层span白底 */
 .goog-te-gadget-simple span {
   background: transparent !important;
 }
 
-/* 下拉语言弹窗置顶，不会遮挡页面内容 */
+/* 下拉弹窗层级置顶 */
 .goog-te-menu-frame {
   z-index: 99999 !important;
 }
