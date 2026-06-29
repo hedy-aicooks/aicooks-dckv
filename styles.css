@@ -189,7 +189,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 }
 
 /* 清除所有内层残留白底 */
- /*.goog-te-gadget-simple span {
+.goog-te-gadget-simple span {
   background: transparent !important;
 }
 
@@ -197,19 +197,3 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 .goog-te-menu-frame {
   z-index: 99999 !important;
 }
- 200 /* 谷歌翻译手机端适配修复 */
-201 .goog-logo-link {display: none !important;}
-202 .goog-te-gadget .goog-te-combo {padding: 6px 8px;min-width: 140px;}
-203 body {top: 0 !important;}
-204 /* 终极屏蔽谷歌顶部翻译横幅，覆盖JS内联样式 */
-205 iframe.goog-te-banner-frame[style] {
-206   display: none !important;
-207   visibility: hidden !important;
-208   height: 0 !important;
-209   overflow: hidden !important;
-210 }
-211 body[style] {
-212   top: 0px !important;
-213   padding-top: 0 !important;
-214   margin-top: 0 !important;
-215 }*/
