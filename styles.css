@@ -202,23 +202,16 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 .goog-te-gadget .goog-te-combo {padding: 6px 8px;min-width: 140px;}
 body {top: 0 !important;}
 /* 谷歌翻译顶部提示条彻底固定悬浮，不挤压页面、不遮挡头部banner */
+/* 谷歌翻译顶部提示条直接隐藏，从根源解决遮挡banner问题 */
 .goog-te-banner-frame {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  height: auto !important;
-  z-index: 99999 !important;
-  /* 改成悬浮在页面最顶层，不占文档流高度 */
+  display: none !important;
 }
-/* 核心：取消body被强制下移，不会被翻译条顶下去 */
+/* 取消body偏移、取消导航顶部多余内边距 */
 body {
   top: 0 !important;
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
-/* 给头部导航增加顶部内边距，避开悬浮翻译条，防止文字被盖住 */
 .navbar {
-  padding-top: 40px !important;
+  padding-top: 0 !important;
 }
