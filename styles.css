@@ -200,11 +200,12 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 iframe.goog-te-banner-frame[style] {
   position: fixed !important;
   bottom: 0 !important;
+  top: auto !important; /* 取消顶部定位 */
   left: 0 !important;
   width: 100% !important;
   height: 40px !important;
-  opacity: 0.4;
-  background: rgba(0, 0, 0, 0.2) !important;
+  opacity: 0.4 !important;
+  background: rgba(0,0,0,0.2) !important;
   z-index: 999999 !important;
   pointer-events: none !important;
   overflow: hidden !important;
