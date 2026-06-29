@@ -197,16 +197,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 .goog-te-menu-frame {
   z-index: 99999 !important;
 }
-/* 手机端导航翻译控件缩小适配 */
-@media screen and (max-width: 768px) {
-  #google_translate_element {
-    transform: scale(0.8);
-    transform-origin: right center;
-    margin-left: 8px;
-  }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-}
+/* 谷歌翻译手机端适配修复 */
+.goog-logo-link {display: none !important;}
+.goog-te-gadget .goog-te-combo {padding: 6px 8px;min-width: 140px;}
+body {top: 0 !important;}
+.goog-te-banner-frame {top:auto !important;bottom:0;}
