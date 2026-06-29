@@ -144,7 +144,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 外层容器和Request Quote垂直居中对齐 */
+/* 外层容器和Request Quote按钮垂直居中对齐 */
 #google_translate_element {
   display: inline-flex !important;
   align-items: center !important;
@@ -152,46 +152,43 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   line-height: 1 !important;
 }
 
-/* 完全清除白底、边框、阴影 */
+/* 彻底清除白底、边框、阴影、内外边距，完全透明 */
 .goog-te-gadget-simple {
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
   box-shadow: none !important;
-  position: relative !important;
 }
 
-/* 关键：大幅减少底部预留空间，缩小图标与三角间距 */
+/* 横向布局：图标+三角同一行，垂直居中 */
 .goog-te-gadget-simple .goog-te-menu-value {
-  position: relative !important;
-  padding-bottom: 3px !important; /* 数值越小，三角越贴近图标 */
-  display: block !important;
-  text-align: center !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 4px !important; /* 两个元素中间间隔，4px≈1个字符宽度，改成0px完全贴紧 */
+  padding: 0 !important;
 }
 
 /* G图标垂直居中，消除上浮偏移 */
 .goog-te-gadget-simple img {
-  display: inline-block !important;
+  margin: 0 !important;
   vertical-align: middle !important;
-  margin: 0 auto !important;
 }
 
-/* 三角强制水平居中在图标正下方 */
+/* 下拉三角取消所有上下定位，横向紧贴图标右侧 */
 .goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
-  position: absolute !important;
-  left: 50% !important;
-  bottom: 0 !important;
-  transform: translateX(-50%) !important;
+  position: static !important;
+  transform: none !important;
   margin: 0 !important;
 }
 
-/* 隐藏“选择语言”文字 */
+/* 隐藏多余“选择语言”文字 */
 .goog-te-gadget-simple span:nth-child(3) {
   display: none !important;
 }
 
-/* 清除所有残留白色底色 */
+/* 清除所有内层残留白色底色 */
 .goog-te-gadget-simple span {
   background: transparent !important;
 }
