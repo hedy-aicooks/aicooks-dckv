@@ -144,17 +144,58 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 谷歌翻译语言按钮美化 */
+/* 1. 外层容器和导航按钮Request Quote水平居中对齐 */
+#google_translate_element {
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+}
+
+/* 2. 彻底清除白底、边框、阴影、所有内外边距，完全透明 */
 .goog-te-gadget-simple {
-    padding:6px 12px !important;
-    font-size:14px !important;
-    border: 1px solid #ddd !important;
-    border-radius: 6px !important;
-    background-color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  position: relative !important;
 }
+
+/* 包裹图标、文字、三角的容器，基准定位 */
+.goog-te-gadget-simple .goog-te-menu-value {
+  position: relative !important;
+  padding-bottom: 10px !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+/* 修正G图标位置，不再偏上，垂直居中 */
+.goog-te-gadget-simple img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 auto !important;
+}
+
+/* 3. 隐藏“选择语言”文字，只保留下三角；三角水平居中在G图标正下方对齐 */
+.goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 0 !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+}
+/* 隐藏多余文字“选择语言” */
+.goog-te-gadget-simple span:nth-child(3) {
+  display: none !important;
+}
+
+/* 清除所有内层残留白色背景 */
 .goog-te-gadget-simple span {
-    font-size:0 !important;
+  background: transparent !important;
 }
-.goog-te-gadget-simple span:first-child {
-    font-size:14px !important;
+
+/* 下拉语言弹窗置顶，避免遮挡页面内容 */
+.goog-te-menu-frame {
+  z-index: 99999 !important;
 }
