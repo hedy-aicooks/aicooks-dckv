@@ -144,7 +144,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 1. 外层容器和导航按钮Request Quote水平居中对齐 */
+/* 外层容器和Request Quote垂直居中对齐 */
 #google_translate_element {
   display: inline-flex !important;
   align-items: center !important;
@@ -152,7 +152,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   line-height: 1 !important;
 }
 
-/* 2. 彻底清除白底、边框、阴影、所有内外边距，完全透明 */
+/* 完全清除白底、边框、阴影 */
 .goog-te-gadget-simple {
   background: transparent !important;
   border: none !important;
@@ -162,22 +162,22 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   position: relative !important;
 }
 
-/* 包裹图标、文字、三角的容器，基准定位 */
+/* 关键：大幅减少底部预留空间，缩小图标与三角间距 */
 .goog-te-gadget-simple .goog-te-menu-value {
   position: relative !important;
-  padding-bottom: 10px !important;
+  padding-bottom: 3px !important; /* 数值越小，三角越贴近图标 */
   display: block !important;
   text-align: center !important;
 }
 
-/* 修正G图标位置，不再偏上，垂直居中 */
+/* G图标垂直居中，消除上浮偏移 */
 .goog-te-gadget-simple img {
   display: inline-block !important;
   vertical-align: middle !important;
   margin: 0 auto !important;
 }
 
-/* 3. 隐藏“选择语言”文字，只保留下三角；三角水平居中在G图标正下方对齐 */
+/* 三角强制水平居中在图标正下方 */
 .goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
   position: absolute !important;
   left: 50% !important;
@@ -185,17 +185,18 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   transform: translateX(-50%) !important;
   margin: 0 !important;
 }
-/* 隐藏多余文字“选择语言” */
+
+/* 隐藏“选择语言”文字 */
 .goog-te-gadget-simple span:nth-child(3) {
   display: none !important;
 }
 
-/* 清除所有内层残留白色背景 */
+/* 清除所有残留白色底色 */
 .goog-te-gadget-simple span {
   background: transparent !important;
 }
 
-/* 下拉语言弹窗置顶，避免遮挡页面内容 */
+/* 语言下拉弹窗置顶不遮挡页面 */
 .goog-te-menu-frame {
   z-index: 99999 !important;
 }
