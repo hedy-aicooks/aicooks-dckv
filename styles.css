@@ -197,21 +197,19 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 .goog-te-menu-frame {
   z-index: 99999 !important;
 }
-/* 谷歌翻译手机端适配修复 */
-.goog-logo-link {display: none !important;}
-.goog-te-gadget .goog-te-combo {padding: 6px 8px;min-width: 140px;}
-body {top: 0 !important;}
-/* 谷歌翻译顶部提示条彻底固定悬浮，不挤压页面、不遮挡头部banner */
-/* 谷歌翻译顶部提示条直接隐藏，从根源解决遮挡banner问题 */
-.goog-te-banner-frame {
-  display: none !important;
-}
-/* 取消body偏移、取消导航顶部多余内边距 */
-body {
-  top: 0 !important;
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-.navbar {
-  padding-top: 0 !important;
-}
+200 /* 谷歌翻译手机端适配修复 */
+201 .goog-logo-link {display: none !important;}
+202 .goog-te-gadget .goog-te-combo {padding: 6px 8px;min-width: 140px;}
+203 body {top: 0 !important;}
+204 /* 终极屏蔽谷歌顶部翻译横幅，覆盖JS内联样式 */
+205 iframe.goog-te-banner-frame[style] {
+206   display: none !important;
+207   visibility: hidden !important;
+208   height: 0 !important;
+209   overflow: hidden !important;
+210 }
+211 body[style] {
+212   top: 0px !important;
+213   padding-top: 0 !important;
+214   margin-top: 0 !important;
+215 }
