@@ -305,5 +305,18 @@ window.addEventListener('scroll',()=>{
 const fObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 </script>
+  <script type="text/javascript">
+// 仅定义初始化函数，删除window.onload绑定
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: true
+    }, 'google_translate_element');
+}
+</script>
+<!-- 引入谷歌核心JS，携带cb回调，加载完成自动执行函数 -->
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
