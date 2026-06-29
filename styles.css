@@ -144,57 +144,51 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 容器整体与导航垂直居中 */
+/* 外层容器和导航垂直居中 */
 #google_translate_element {
   display: inline-flex !important;
   align-items: center !important;
   vertical-align: middle !important;
 }
 
-/* 清除全部白框、边框、阴影、内外留白 */
+/* 清除白框、边框、阴影、边距 */
 .goog-te-gadget-simple {
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
   box-shadow: none !important;
+  position: relative !important;
 }
 
-/* 图标+三角改为垂直上下布局，内部水平居中 */
+/* 包裹图标文字的容器改为相对定位基准 */
 .goog-te-gadget-simple .goog-te-menu-value {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0px !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  position: relative !important;
+  padding-bottom: 12px !important;
+  display: inline-block !important;
 }
 
-/* Google图标强制水平居中，无左右偏移 */
+/* Google图标正常显示 */
 .goog-te-gadget-simple img {
   display: block !important;
   margin: 0 auto !important;
 }
 
-/* 下拉三角取消所有左边距，水平居中，紧贴图标底部 */
+/* 核心：三角绝对定位，强制水平居中在图标正下方 */
 .goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
-  margin: 0 auto !important;
-  margin-left: 0 !important;
-  transform: translateY(-2px);
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 0 !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
 }
 
-/* 隐藏谷歌自带多余文字 */
+/* 隐藏多余“选择语言”文字 */
 .goog-te-gadget-simple span:nth-child(3) {
   display: none !important;
 }
 
-/* 清除所有内层残留白色背景 */
+/* 清除内层所有白底 */
 .goog-te-gadget-simple span {
   background: transparent !important;
-}
-.goog-te-menu-value > span:nth-child(2) {
-  left: 50% !important;
-  transform: translate(-50%, -2px) !important;
-  position: relative !important;
 }
