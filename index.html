@@ -306,7 +306,27 @@ const fObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersec
 document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 </script>
   
-<!-- 谷歌翻译放页面全部渲染完成之后 -->
+<!-- 谷歌翻译页面全部渲染完成之后 -->
+<!-- 新增：拦截翻译顶部横幅JS -->
+<script>
+// 实时监控并强制销毁谷歌顶部翻译横幅，阻止页面下移
+window.addEventListener('load', function() {
+  setInterval(function() {
+    // 隐藏顶部翻译iframe
+    const bannerIframe = document.querySelector('iframe.goog-te-banner-frame');
+    if (bannerIframe) {
+      bannerIframe.style.display = 'none';
+      bannerIframe.style.height = '0';
+      bannerIframe.style.visibility = 'hidden';
+    }
+    // 强制重置body顶部偏移，不让页面被顶下去遮挡header
+    document.body.style.top = '0px';
+    document.documentElement.style.scrollPaddingTop = '0';
+  }, 100);
+});
+</script>
+
+<!-- 你原本的翻译初始化脚本，不动 -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
   try {
@@ -314,14 +334,12 @@ function googleTranslateElementInit() {
       pageLanguage: 'en',
       includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it,id,th,vi,ms,tl,lo,km,my',
       layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-      autoDisplay: true
+      autoDisplay: true,
+      showBanner: false // 记得加上这个参数，源头关闭横幅
     }, 'google_translate_element');
-  } catch (err) {
-    // 手机渲染慢初始化失败，500ms后自动重试
+  } catch (err)
     setTimeout(googleTranslateElementInit, 800);
   }
 }
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-</html>
