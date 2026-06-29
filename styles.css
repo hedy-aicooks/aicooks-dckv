@@ -144,24 +144,22 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
+/* 翻译按钮容器层级拉高 */
 #google_translate_element {
-  display:inline-block;
-  margin-left:15px;
-  vertical-align: middle;
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-}
-.goog-te-gadget {
-  visibility: hidden;
   position: relative;
+  z-index: 9999;
 }
-/* 自定义图标放在上层 */
-.goog-te-gadget::after {
-  visibility: visible;
-  content: "🌐";
-  font-size: 20px;
-  position: absolute;
-  left: 0;
-  top: 0;
+/* 下拉弹窗强制置顶，不会被页面任何元素盖住 */
+.goog-te-menu-frame {
+  z-index: 99999 !important;
+}
+/* 去除默认灰色难看背景 */
+.goog-te-gadget-simple {
+  background: transparent !important;
+  border: 1px solid #ddd !important;
+  padding: 5px 10px !important;
+}
+/* 隐藏谷歌自带多余小字 */
+.goog-te-gadget-simple span:nth-child(3) {
+  display: none !important;
 }
