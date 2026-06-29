@@ -152,7 +152,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   line-height: 1 !important;
 }
 
-/* 彻底清除白底、边框、阴影、内外边距，完全透明 */
+/* 清除所有白底、边框、阴影、内外边距 */
 .goog-te-gadget-simple {
   background: transparent !important;
   border: none !important;
@@ -161,25 +161,25 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   box-shadow: none !important;
 }
 
-/* 横向布局：图标+三角同一行，垂直居中 */
+/* 横向并排布局，gap设为0完全贴紧 */
 .goog-te-gadget-simple .goog-te-menu-value {
   display: inline-flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 4px !important; /* 两个元素中间间隔，4px≈1个字符宽度，改成0px完全贴紧 */
+  gap: 0px !important; /* 0px = 图标三角无缝贴合 */
   padding: 0 !important;
 }
 
-/* G图标垂直居中，消除上浮偏移 */
+/* G图标垂直居中，消除上下偏移 */
 .goog-te-gadget-simple img {
   margin: 0 !important;
   vertical-align: middle !important;
 }
 
-/* 下拉三角取消所有上下定位，横向紧贴图标右侧 */
+/* 下拉三角取消定位偏移，和图标中线对齐 */
 .goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
   position: static !important;
-  transform: none !important;
+  transform: translateY(1px) !important; /* 微调三角上下，和图标完全中线对齐 */
   margin: 0 !important;
 }
 
@@ -188,12 +188,12 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   display: none !important;
 }
 
-/* 清除所有内层残留白色底色 */
+/* 清除内层残留白色底色 */
 .goog-te-gadget-simple span {
   background: transparent !important;
 }
 
-/* 语言下拉弹窗置顶不遮挡页面 */
+/* 下拉语言弹窗置顶不遮挡页面 */
 .goog-te-menu-frame {
   z-index: 99999 !important;
 }
