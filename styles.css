@@ -144,14 +144,14 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 外层容器弹性居中 */
+/* 容器整体与导航垂直居中 */
 #google_translate_element {
   display: inline-flex !important;
   align-items: center !important;
   vertical-align: middle !important;
 }
 
-/* 彻底清除白色方框、边框、阴影、内边距 */
+/* 清除全部白框、边框、阴影、内外留白 */
 .goog-te-gadget-simple {
   background: transparent !important;
   border: none !important;
@@ -160,33 +160,36 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   box-shadow: none !important;
 }
 
-/* 把图标+三角改成上下竖排布局 */
+/* 图标+三角改为垂直上下布局，内部水平居中 */
 .goog-te-gadget-simple .goog-te-menu-value {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 0px !important;
   padding: 0 !important;
-}
-
-/* 谷歌彩色图标大小、间距重置 */
-.goog-te-gadget-simple img {
   margin: 0 !important;
-  vertical-align: unset !important;
 }
 
-/* 下拉三角居中放在图标正下方，缩小间距 */
+/* Google图标强制水平居中，无左右偏移 */
+.goog-te-gadget-simple img {
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* 下拉三角取消所有左边距，水平居中，紧贴图标底部 */
 .goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
+  margin: 0 auto !important;
   margin-left: 0 !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-2px);
 }
 
-/* 隐藏谷歌自带多余“翻译”文字 */
+/* 隐藏谷歌自带多余文字 */
 .goog-te-gadget-simple span:nth-child(3) {
   display: none !important;
 }
 
-/* 清除内层所有残留白色背景 */
+/* 清除所有内层残留白色背景 */
 .goog-te-gadget-simple span {
   background: transparent !important;
 }
