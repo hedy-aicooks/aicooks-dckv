@@ -307,6 +307,7 @@ window.addEventListener('scroll',()=>{
 const fObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 </script>
+</body>
 
 <!-- 谷歌翻译脚本必须放在 </body> 之前、</html> 内部 -->
 <!-- 谷歌翻译页面全部渲染完成之后 -->
