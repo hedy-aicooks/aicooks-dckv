@@ -144,22 +144,43 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
   .hero-stats{gap:20px}
   .section{padding:60px 0}
 }
-/* 翻译按钮容器层级拉高 */
+/* 翻译外层容器取消默认间距 */
 #google_translate_element {
-  position: relative;
-  z-index: 9999;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
-/* 下拉弹窗强制置顶，不会被页面任何元素盖住 */
-.goog-te-menu-frame {
-  z-index: 99999 !important;
-}
-/* 去除默认灰色难看背景 */
+
+/* 去除白色背景、边框 */
 .goog-te-gadget-simple {
   background: transparent !important;
-  border: 1px solid #ddd !important;
-  padding: 5px 10px !important;
+  border: none !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important; /* 图标和箭头中间间距 */
 }
-/* 隐藏谷歌自带多余小字 */
+
+/* 图标、文字垂直居中 */
+.goog-te-gadget-simple .goog-te-menu-value {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0 4px !important;
+  margin: 0 !important;
+}
+
+/* 下拉箭头微调位置，和图标中线对齐 */
+.goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
+  margin-left: 2px !important;
+  transform: translateY(1px);
+}
+
+/* 隐藏谷歌多余“翻译”小字 */
 .goog-te-gadget-simple span:nth-child(3) {
   display: none !important;
+}
+
+/* 深色导航文字白色适配（可选） */
+.goog-te-gadget-simple .goog-te-menu-value span {
+  color: #fff !important;
 }
