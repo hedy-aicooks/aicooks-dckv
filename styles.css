@@ -193,3 +193,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 .goog-te-gadget-simple span {
   background: transparent !important;
 }
+.goog-te-menu-value > span:nth-child(2) {
+  left: 50% !important;
+  transform: translate(-50%, -2px) !important;
+  position: relative !important;
+}
