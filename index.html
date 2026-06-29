@@ -307,9 +307,9 @@ window.addEventListener('scroll',()=>{
 const fObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 </script>
-</body>
-</html>
-<!-- 谷歌翻译放页面全部渲染完成之后 -->
+
+<!-- 谷歌翻译脚本必须放在 </body> 之前、</html> 内部 -->
+<!-- 谷歌翻译页面全部渲染完成之后 -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
@@ -321,3 +321,6 @@ function googleTranslateElementInit() {
 }
 </script>
 <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
