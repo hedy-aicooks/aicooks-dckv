@@ -201,4 +201,16 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 .goog-logo-link {display: none !important;}
 .goog-te-gadget .goog-te-combo {padding: 6px 8px;min-width: 140px;}
 body {top: 0 !important;}
-.goog-te-banner-frame {top:auto !important;bottom:0;}
+/* 翻译弹窗固定在页面底部，不占用页面高度、不顶起头部 */
+.goog-te-banner-frame {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+}
+/* 取消body顶部偏移，不会被翻译条顶下去 */
+body {
+  top: 0 !important;
+  margin-bottom: 50px !important; /* 预留底部空白，防止内容被弹窗盖住 */
+}
