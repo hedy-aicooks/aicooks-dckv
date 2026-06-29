@@ -201,16 +201,24 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:32px 0}
 .goog-logo-link {display: none !important;}
 .goog-te-gadget .goog-te-combo {padding: 6px 8px;min-width: 140px;}
 body {top: 0 !important;}
-/* 翻译弹窗固定在页面底部，不占用页面高度、不顶起头部 */
+/* 谷歌翻译顶部提示条彻底固定悬浮，不挤压页面、不遮挡头部banner */
 .goog-te-banner-frame {
   position: fixed !important;
-  top: auto !important;
-  bottom: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   width: 100% !important;
-  z-index: 9999 !important;
+  height: auto !important;
+  z-index: 99999 !important;
+  /* 改成悬浮在页面最顶层，不占文档流高度 */
 }
-/* 取消body顶部偏移，不会被翻译条顶下去 */
+/* 核心：取消body被强制下移，不会被翻译条顶下去 */
 body {
   top: 0 !important;
-  margin-bottom: 50px !important; /* 预留底部空白，防止内容被弹窗盖住 */
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+/* 给头部导航增加顶部内边距，避开悬浮翻译条，防止文字被盖住 */
+.navbar {
+  padding-top: 40px !important;
 }
