@@ -309,18 +309,19 @@ document.querySelectorAll('.fade').forEach(el=>fObs.observe(el));
 <!-- 谷歌翻译页面全部渲染完成之后 -->
 <!-- 你原本的翻译初始化脚本，不动 -->
 <script type="text/javascript">
+// 仅定义初始化函数，删除window.onload绑定
 function googleTranslateElementInit() {
-  try {
     new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it,id,th,vi,ms,tl,lo,km,my',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-      autoDisplay: true,
-      showBanner: false // 记得加上这个参数，源头关闭横幅
+        pageLanguage: 'en',
+        // 原有语种 + 东南亚语种：id,th,vi,ms,tl,lo,km,my
+        includedLanguages: 'zh-CN,ar,en,es,fr,de,ru,pt,it,id,th,vi,ms,tl,lo,km,my',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: true
     }, 'google_translate_element');
-  } catch (err)
-    setTimeout(googleTranslateElementInit, 800);
-  }
 }
 </script>
+<!-- 引入谷歌核心JS，携带cb回调，加载完成自动执行函数 -->
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- 翻译控件容器 -->
+<div id="google_translate_element"></div>
